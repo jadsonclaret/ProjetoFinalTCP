@@ -1,0 +1,109 @@
+<!--Página do Administrador-->
+<!DOCTYPE html>
+<html ng-app="expenseApp">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /> <!--aceitar caracter especiais-->
+
+<head>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Painel de Controle - www.tomeinoburaco.com.br</title>
+</head>
+<body>
+
+<div id="lista" class="wrapper" ng-controller="expenseController">
+	<section class="form">
+		<!--CabeÃ§alho Superior-->
+		<div id="cabecalho">
+			<!--Colocar aqui a imagem-->
+			<img id="cabecalho-image" src="images/logo.png"/>	
+		</div> 
+		<div id="barra-superior">
+			<!--Barra Superior-->
+			<a id="toobar" href="index.html"> Home </a>
+			<a id="toobar" href="relatorio.html"> Relatório </a>
+		</div> 
+		<div id="corpo-cadastro">	
+			<h2>Cadastro de Notícias</h2>
+			<form action="" method="POST" class="form-horizontal" ng-submit="addExpense()">	
+				<!--TÃ­tulo Noticia-->
+				<div class="control-group">
+					<label class="control-label" for="description">
+						Notícia.:
+					</label>
+					<div class="controls">
+						<input id="description" ng-model="description" size= 45 MAXLENGTH = 36 required />
+					</div>
+				</div>
+				<!--Descricao Noticia-->
+				<div class="control-group">
+					<label class="control-label" for="value">
+						Descrição.:
+					</label>
+						<div class="controls">
+							<textarea id="value" rows="4" cols="57" ng-model="value" required>
+							</textarea>
+						</div>
+				</div>
+				<!--Escolher Imagem	
+				<div>
+					<label class="control-label" for="value">
+						Imagem.:
+					</label>
+					<div class="controls">
+						<input type="file" required/> 
+					</div>
+				</div>
+				<br><br>-->
+				<!--Botao gravar  class="btn btn-sm btn-primary"	-->
+				<br>
+				<div class="buttons">
+					<input type="submit" value="Salvar Noticia" />
+				</div>
+				<br>
+			</form>
+		</div>
+	</section>
+
+	<section class="list">
+		<div id="corpo-cadastro">
+			<h2>Notícias Cadatradas</h2>
+			<h6>Abaixo as notícias listadas por título de cadastro.</h6>	
+			<table class="table table-bordered">
+			<tbody>
+				<tr ng-repeat="expense in list">
+					<td>{{expense.description}}</td>
+					<td id="celula2">		
+						<span>
+							<input type="button" value="Deletar" ng-click="removeItem($index)" />
+						</span>																
+						<span>
+							<input type="button" value="Editar" ng-click="updateItem($index)" />
+						</span>							
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>	
+		<div id="rodape">
+			<!--RodapÃ©-->
+			<b>
+				<center>Trabalho de TCP</center> 
+				<center>Curso Pós Graduação FAI-MG</center> 
+				<center>Aluno.: Jádson Claret da Cruz</center> 
+				<center>Aluno.: Raul Simões</center> 
+				<center>Turma 2013/2014</center>
+			</b>
+		</div> 
+	</section>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/expenseApp.js"></script>
+<script src="js/controller/ExpenseController.js"></script>
+<script src="js/controller/functions.js"></script>
+<script src="js/expenseApp.js"></script>
+<script src="js/controller/ExpenseController.js"></script>
+
+</body>
+</html>

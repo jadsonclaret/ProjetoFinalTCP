@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="expenseApp">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /> <!--aceitar caracter especiais-->
+
+<head>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Relatório - www.tomeinoburaco.com.br</title>
+</head>
+<body>
+
+<div class="wrapper" ng-controller="expenseController">
+	<section class="form">
+		<!--Cabeçalho Superior-->
+		<div id="cabecalho">
+			<!--Colocar aqui a imagem-->
+			<img id="cabecalho-image" src="images/logo.png"/>	
+		</div> 
+		<div id="barra-superior">
+			<!--Barra Superior-->
+			<a id="toobar" href="index.html"> Home </a>
+			<a id="toobar" href="indexadministrador.html"> Administrador </a>
+		</div> 
+		<div id="corpo-cadastro">	
+			<h2>Relatório do site</h2>
+			<form action="" method="POST" class="form-horizontal" ng-submit="addExpense()">	
+				
+		</div>
+	</section>
+
+	<section class="list">	
+		<div id="rodape">
+			<!--Rodapé-->
+			<b>
+				<center>Trabalho de TCP</center> 
+				<center>Curso Pós Graduação FAI-MG</center> 
+				<center>Aluno.: Jádson Claret da Cruz</center> 
+				<center>Aluno.: Raul Simões</center> 
+				<center>Turma 2013/2014</center>
+			</b>
+		</div> 
+	</section>
+</div>
+
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/expenseApp.js"></script>
+<script src="js/controller/ExpenseController.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
+<script src="js/controller/functions.js"></script>
+
+</body>
+</html>
