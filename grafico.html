@@ -1,11 +1,20 @@
+<script language="javascript">
+google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(drawVisualization);
+</script>
+
 <!DOCTYPE html>
 <html ng-app="expenseApp">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <!--aceitar caracter especiais-->
 
+<!--REFERENCIA A API DO GOOGLE-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 <head>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
-	<title>Relatório - www.tomeinoburaco.com.br</title>
+	<title>Gráfico - www.tomeinoburaco.com.br</title>
 </head>
 <body>
 
@@ -14,7 +23,12 @@
 		<!--Cabeçalho Superior-->
 		<div id="cabecalho">
 			<!--Colocar aqui a imagem-->
-			<img id="cabecalho-image" src="images/logo.png"/>	
+			<td>
+				<img id="cabecalho-image" src="images/logo.png"/>
+			</td>	
+			<td>
+				TRABALHO DE PÓS-GRADUAÇÃO MÓDULO TCP
+			</td>
 		</div> 
 		<div id="barra-superior">
 			<!--Barra Superior-->
@@ -22,9 +36,12 @@
 			<a id="toobar" href="indexadministrador.html"> Administrador </a>
 		</div> 
 		<div id="corpo-cadastro">	
-			<h2>Relatório do site</h2>
-			<form action="" method="POST" class="form-horizontal" ng-submit="addExpense()">	
-				
+			<h2>Gráfico</h2>
+			<!--<form action="" method="POST" class="form-horizontal" ng-submit="addExpense()">
+				<H5></H5>
+				<div id="grafico_pizza"></div>-->
+				<H5>Gráfico de buracos por bairro:</H5>
+				<div id="grafico_area"></div>
 		</div>
 	</section>
 
@@ -47,6 +64,7 @@
 <script src="js/controller/ExpenseController.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> 
 <script src="js/controller/functions.js"></script>
+
 
 </body>
 </html>
